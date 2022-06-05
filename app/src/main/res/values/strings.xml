@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ASAP</string>
+    <string name="username">username</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="submit">submit</string>
+    <string name="already_a_user_sign_in">Already a user? Log In</string>
+    <string name="log_in">Log In</string>
+</resources>
