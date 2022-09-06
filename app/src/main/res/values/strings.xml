@@ -6,4 +6,8 @@
     <string name="submit">submit</string>
     <string name="already_a_user_sign_in">Already a user? Log In</string>
     <string name="log_in">Log In</string>
+    <string name="name">name</string>
+    <string name="phone">phone</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="title_activity_driver_map">DriverMapActivity</string>
 </resources>

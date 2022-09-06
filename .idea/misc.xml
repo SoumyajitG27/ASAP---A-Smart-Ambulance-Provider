@@ -4,9 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Studio Projects/ASAP/app/src/main/res/drawable/ic_launcher_background.xml" value="0.137" />
-        <entry key="..\:/Android Studio Projects/ASAP/app/src/main/res/layout/activity_driver_log_in.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Studio Projects/ASAP/app/src/main/res/layout/activity_customer_login.xml" value="0.264" />
+        <entry key="..\:/Android Studio Projects/ASAP/app/src/main/res/layout/activity_customer_registration.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Studio Projects/ASAP/app/src/main/res/layout/activity_driver_customer_option.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Studio Projects/ASAP/app/src/main/res/layout/activity_driver_log_in.xml" value="0.2" />
+        <entry key="..\:/Android Studio Projects/ASAP/app/src/main/res/layout/activity_driver_map.xml" value="0.25416666666666665" />
         <entry key="..\:/Android Studio Projects/ASAP/app/src/main/res/layout/activity_driver_registration.xml" value="0.25416666666666665" />
         <entry key="..\:/Android Studio Projects/ASAP/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Studio Projects/ASAP/app/src/main/res/layout/activity_splashscreen.xml" value="0.25416666666666665" />
         <entry key="..\:/Android Studio Projects/app/src/main/res/layout/activity_driver_login.xml" value="0.1" />
         <entry key="..\:/Android Studio Projects/app/src/main/res/layout/activity_main.xml" value="0.16" />
       </map>

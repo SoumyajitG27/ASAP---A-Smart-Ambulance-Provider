@@ -19,7 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DriverRegistrationActivity extends AppCompatActivity {
+public class CustomerRegistrationActivity extends AppCompatActivity {
 
     ActivityDriverRegistrationBinding binding;
     TextInputLayout emailLayout, pwdLayout, nameLayout, phoneLayout;
@@ -89,11 +89,11 @@ public class DriverRegistrationActivity extends AppCompatActivity {
         userMap.put("email", email);
         userMap.put("name", name);
         userMap.put("phone", phone);
-        fs.collection("driver_info")
+        fs.collection("customer_info")
                 .document(usrID)
                 .set(userMap)
                 .addOnSuccessListener(unused -> {
-                    Toast.makeText(DriverRegistrationActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CustomerRegistrationActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                 })
                 .addOnFailureListener(e -> {
                     Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();

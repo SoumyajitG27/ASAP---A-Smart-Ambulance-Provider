@@ -4,22 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.os.Handler;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button driver, customer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        driver = (Button) findViewById(R.id.driverbtn);
-        customer = (Button) findViewById(R.id.driverbtn);
-
-        driver.setOnClickListener(view -> {
-            Intent in = new Intent(this, DriverRegistrationActivity.class);
+        new Handler().postDelayed(() -> {
+            Intent in = new Intent(MainActivity.this,DriverCustomerOptionActivity.class);
             startActivity(in);
-        });
+        },2500);
+
     }
 }

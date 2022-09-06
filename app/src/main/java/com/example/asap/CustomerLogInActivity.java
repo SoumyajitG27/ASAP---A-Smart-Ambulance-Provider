@@ -14,7 +14,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class DriverLogInActivity extends AppCompatActivity {
+public class CustomerLogInActivity extends AppCompatActivity {
 
     Button btnSignIn;
     ActivityDriverLogInBinding binding;
@@ -68,16 +68,16 @@ public class DriverLogInActivity extends AppCompatActivity {
                     if(user != null)
                     {
                         //if mail is sent
-                        //if(user.isEmailVerified())
-                        //{
+//                        if(user.isEmailVerified())
+//                        {
                             // storing session/user/app data locally
-                            LocalSession session = new LocalSession(DriverLogInActivity.this);
+                            LocalSession session = new LocalSession(CustomerLogInActivity.this);
                             session.storeLogin();;
                             session.storeCredential(user.getUid(), email);
                             //startActivity(new Intent(SignInActivity.this, DashboardActivity.class));
                             Toast.makeText(this, "LogIn Successful!", Toast.LENGTH_SHORT).show();
-                            DriverLogInActivity.this.finish();
-                        //}
+                            CustomerLogInActivity.this.finish();
+//                        }
 //                        else
 //                        {
 //                            Toast.makeText(this, "Sorry, email verification failed!", Toast.LENGTH_SHORT).show();
