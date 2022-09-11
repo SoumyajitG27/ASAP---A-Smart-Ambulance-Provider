@@ -11,4 +11,5 @@
     <string name="sign_in">SIGN IN</string>
     <string name="title_activity_driver_map">DriverMapActivity</string>
     <string name="title_activity_driver_map2">DriverMapActivity2</string>
+    <string name="title_activity_customer_map2">CustomerMapActivity2</string>
 </resources>

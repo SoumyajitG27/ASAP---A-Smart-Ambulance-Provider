@@ -74,8 +74,8 @@ public class CustomerLogInActivity extends AppCompatActivity {
                             LocalSession session = new LocalSession(CustomerLogInActivity.this);
                             session.storeLogin();;
                             session.storeCredential(user.getUid(), email);
-                            //startActivity(new Intent(SignInActivity.this, DashboardActivity.class));
-                            Toast.makeText(this, "LogIn Successful!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(CustomerLogInActivity.this, CustomerMapActivity2.class));
+                            //Toast.makeText(this, "LogIn Successful!", Toast.LENGTH_SHORT).show();
                             CustomerLogInActivity.this.finish();
 //                        }
 //                        else

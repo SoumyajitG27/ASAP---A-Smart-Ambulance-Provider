@@ -74,7 +74,7 @@ public class DriverLogInActivity extends AppCompatActivity {
                             LocalSession session = new LocalSession(DriverLogInActivity.this);
                             session.storeLogin();;
                             session.storeCredential(user.getUid(), email);
-                            startActivity(new Intent(DriverLogInActivity.this, DriverMapActivity.class));
+                            startActivity(new Intent(DriverLogInActivity.this, DriverMapActivity2.class));
                             //Toast.makeText(this, "LogIn Successful!", Toast.LENGTH_SHORT).show();
                             DriverLogInActivity.this.finish();
                         //}

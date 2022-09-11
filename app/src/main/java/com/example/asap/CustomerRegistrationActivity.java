@@ -54,7 +54,7 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
 
         optionLogIn.setOnClickListener(view -> {
             // TODO: route to the login or sign in screen that you have added to the project
-            Intent intent = new Intent(this, DriverLogInActivity.class);
+            Intent intent = new Intent(this, CustomerLogInActivity.class);
             startActivity(intent);
         });
 
