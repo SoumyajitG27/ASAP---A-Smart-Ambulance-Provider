@@ -6,9 +6,10 @@
     android:layout_width="match_parent"
     tools:context=".DriverMapActivity">
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_power_settings_new_24"
         android:id="@+id/logout"
         android:text="LOGOUT" />
 
@@ -19,10 +20,19 @@
         android:layout_height="match_parent" />
 
     <Button
-        android:id="@+id/request"
-        android:layout_width="match_parent"
+        android:id="@+id/alert"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CALL AMBULANCE"
-        android:layout_gravity="bottom"/>
+        android:text="SEND ACCIDENT ALERT"
+        android:backgroundTint="@color/purple_700"
+        android:layout_gravity="right|bottom"/>
+
+    <Button
+        android:id="@+id/request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:text="CALL AMBULANCE" />
+
 
 </FrameLayout>

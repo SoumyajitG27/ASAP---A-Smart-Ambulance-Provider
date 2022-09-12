@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -31,7 +32,9 @@ public class CustomerMapActivity2 extends FragmentActivity implements OnMapReady
     private GoogleMap mMap;
     private ActivityCustomerMap2Binding binding;
     private Button mRequest;
+    private Button mAlert;
     public LatLng pickupLocation;
+    private Button mLogout;
     Location mLastLocation;
 
     @Override
@@ -45,6 +48,17 @@ public class CustomerMapActivity2 extends FragmentActivity implements OnMapReady
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        mLogout = findViewById(R.id.logout);
+        mLogout.setOnClickListener(v -> logOut());
+        mAlert = findViewById(R.id.alert);
+        mAlert.setOnClickListener(view -> {
+            String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("customerRequest");
+            GeoFire geoFire = new GeoFire(ref);
+            geoFire.setLocation(userId, new GeoLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()));
+            pickupLocation = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+            mMap.addMarker(new MarkerOptions().position(pickupLocation).title("Pickup Here"));
+        });
 
         mRequest = (Button) findViewById(R.id.request);
         mRequest.setOnClickListener(view -> {
@@ -105,5 +119,23 @@ public class CustomerMapActivity2 extends FragmentActivity implements OnMapReady
             return;
         }
         mMap.setMyLocationEnabled(true);
+    }
+
+    private void logOut() {
+        onStop();
+
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(CustomerMapActivity2.this, CustomerRegistrationActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("customerRequest");
+        GeoFire geoFire = new GeoFire(ref);
+        geoFire.removeLocation(userId);
     }
 }

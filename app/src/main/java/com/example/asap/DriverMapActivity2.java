@@ -6,11 +6,13 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,6 +33,7 @@ public class DriverMapActivity2 extends FragmentActivity implements OnMapReadyCa
 
     private GoogleMap mMap;
     private Boolean oke = false;
+    private Button mLogout;
 //    TextView lat, lon;
 
     private ActivityDriverMap2Binding binding;
@@ -41,6 +44,8 @@ public class DriverMapActivity2 extends FragmentActivity implements OnMapReadyCa
 
         binding = ActivityDriverMap2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        mLogout = findViewById(R.id.logout);
+        mLogout.setOnClickListener(v -> logOut());
 //        lat = findViewById(R.id.latitudemap);
 //        lon = findViewById(R.id.longitudemap);
 
@@ -107,6 +112,15 @@ public class DriverMapActivity2 extends FragmentActivity implements OnMapReadyCa
             return;
         }
         mMap.setMyLocationEnabled(true);
+    }
+
+    private void logOut() {
+        onStop();
+
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(DriverMapActivity2.this, DriverRegistrationActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
